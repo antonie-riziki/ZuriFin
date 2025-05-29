@@ -1,0 +1,10 @@
+streamlit
+python-dotenv
+streamlit_option_menu 
+streamlit_chat
+africastalking
+openai
+requests
+google-generativeai
+streamlit-folium
+folium
