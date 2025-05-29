@@ -82,7 +82,6 @@ with col1:
 
 			        # Set your message
 			        message = f"Hi {first_name} !Karibu to ZuriFin, Your financial buddy! \nAsk me about saving, budgeting, debt, or investing. Start by typing a question. Let’s grow"
-    ";
 
 			        # Set your shortCode or senderId
 			        sender = 20880
