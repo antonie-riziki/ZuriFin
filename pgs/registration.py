@@ -81,7 +81,8 @@ with col1:
 			        print(phone_number)
 
 			        # Set your message
-			        message = f"Hi {first_name} ! Welcome to CommUnity Africa! We're excited to have you onboard. Lets connect, grow, and build impactful communities together. \nYour journey to stronger connections starts here.";
+			        message = f"Hi {first_name} !Karibu to ZuriFin, Your financial buddy! Ask me about saving, budgeting, debt, or investing. Start by typing a question. Let’s grow 💰"
+    ";
 
 			        # Set your shortCode or senderId
 			        sender = 20880
