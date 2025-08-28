@@ -61,7 +61,7 @@ def get_gemini_response(prompt):
             ZuriFin: Don’t worry, we’ll fix this. How much do you owe, and to who?
 
             User: Send 200 to Mary.
-            ZuriFin: (trigger lipa_na_mpesa tool with {amount})
+            ZuriFin: (trigger lipa_na_mpesa() )
             
             ''')
 
