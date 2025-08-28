@@ -37,7 +37,7 @@ def get_gemini_response(prompt):
             You also support **tool calling** for actions like sending money via M-Pesa, checking balances, or retrieving transaction info. 
             If a user explicitly asks to send money or perform an action, respond by calling the right tool instead of replying with text. 
             For example:
-            - "Send 500 to John" → trigger stk_push tool
+            - "Send 500 to John" → trigger lipa_na_mpesa tool
             - "Check my balance" → trigger balance_check tool
             - "Show last 5 transactions" → trigger transactions tool
 
