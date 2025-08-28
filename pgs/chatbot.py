@@ -61,7 +61,7 @@ def get_gemini_response(prompt):
             ZuriFin: Don’t worry, we’ll fix this. How much do you owe, and to who?
 
             User: Send 200 to Mary.
-            ZuriFin: (trigger lipa_na_mpesa() )
+            ZuriFin: {"action":"lipa_na_mpesa", "amount":200}
             
             ''')
 
@@ -75,52 +75,24 @@ def get_gemini_response(prompt):
       )
     
     )
-    
-    return response.text
 
+    text = response.text.strip()
 
-def send_response(phone_number, reply_sms):
-
-    recipients = [f"+254{str(phone_number)}"]
-
-    print(recipients)
-    print(phone_number)
-
-    # Set your message
-    message = f"{reply_sms}";
-
-    # Set your shortCode or senderId
-    sender = 20880
-    keyword = "Test 11"
-
+    # Try to parse tool call
     try:
-        
-        response = sms.send_premium(message, recipients, sender, keyword, retry_duration_in_hours=1)
+        data = json.loads(text)
+        if "action" in data and data["action"] == "lipa_na_mpesa":
+            return lipa_na_mpesa(data["amount"], data["recipient"])
+    except Exception:
+        # Not a tool call, just return text
+        return text
 
-        print(response)
-
-    except Exception as e:
-        print(f'Houston, we have a problem: {e}')
-
-
-
-# def handle_incoming_sms(phone_number, user_message):
-#     try:
-#         # 1. Get AI-generated response from Gemini
-#         ai_response = get_gemini_response(user_message)
-
-#         # 2. Clean/trim AI response for SMS (just in case)
-#         trimmed_response = ai_response.strip()[:20]
-
-#         # 3. Send response via Africa's Talking SMS
-#         send_response(phone_number, trimmed_response)
-
-#     except Exception as e:
-#         print(f"Error handling SMS: {e}")
+    return text
+    
+    # return response.text
 
 
 
-# handle_incoming_sms(phone_number="743158232", user_message="How can I save money?")
 
 
 # Initialize session state for chat history
