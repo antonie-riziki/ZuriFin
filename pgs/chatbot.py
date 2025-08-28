@@ -5,6 +5,7 @@ import africastalking
 import streamlit as st 
 import google.generativeai as genai
 import os
+import sys 
 
 
 sys.path.insert(1, './models')
