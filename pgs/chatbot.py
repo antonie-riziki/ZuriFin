@@ -76,20 +76,20 @@ def get_gemini_response(prompt):
     
     )
 
-    text = response.text.strip()
+    # text = response.text.strip()
 
-    # Try to parse tool call
-    try:
-        data = json.loads(text)
-        if "action" in data and data["action"] == "lipa_na_mpesa":
-            return lipa_na_mpesa(data["amount"], data["recipient"])
-    except Exception:
-        # Not a tool call, just return text
-        return text
+    # # Try to parse tool call
+    # try:
+    #     data = json.loads(text)
+    #     if "action" in data and data["action"] == "lipa_na_mpesa":
+    #         return lipa_na_mpesa(data["amount"], data["recipient"])
+    # except Exception:
+    #     # Not a tool call, just return text
+    #     return text
 
-    return text
+    # return text
     
-    # return response.text
+    return response.text
 
 
 
