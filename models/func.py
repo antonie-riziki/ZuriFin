@@ -31,11 +31,11 @@ def send_response(phone_number, reply_sms):
 
     # Set your shortCode or senderId
     sender = 20880
-    keyword = "Test11"
+    # keyword = "Test11"
 
     try:
         
-        response = sms.send_premium(message, recipients, sender, keyword)
+        response = sms.send_premium(message, recipients, sender)
 
         print(response)
 

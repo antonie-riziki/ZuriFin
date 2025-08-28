@@ -34,4 +34,4 @@ def lipa_na_mpesa():
     print(response.text)
 
 
-# lipa_na_mpesa()
+lipa_na_mpesa()
