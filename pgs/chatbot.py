@@ -30,7 +30,7 @@ def get_gemini_response(prompt):
 
     model = genai.GenerativeModel("gemini-2.0-flash", 
 
-        system_instruction = '''
+        system_instruction = f'''
             You are ZuriFin, a smart, friendly, and culturally aware financial assistant available via SMS. 
             You help users with money matters like budgeting, saving, investing, debt, credit scores, and retirement planning. 
 
@@ -61,7 +61,7 @@ def get_gemini_response(prompt):
             ZuriFin: Don’t worry, we’ll fix this. How much do you owe, and to who?
 
             User: Send 200 to Mary.
-            ZuriFin: {"action":"lipa_na_mpesa", "amount":200}
+            ZuriFin: {lipa_na_mpesa()}
             
             ''')
 
