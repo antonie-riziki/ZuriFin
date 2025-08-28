@@ -28,7 +28,7 @@ sms = africastalking.SMS
 
 def get_gemini_response(prompt):
 
-    model = genai.GenerativeModel("gemini-2.5-flash", 
+    model = genai.GenerativeModel("gemini-2.0-flash", 
 
         system_instruction = '''
             You are ZuriFin, a smart, friendly, and culturally aware financial assistant available via SMS. 
@@ -60,9 +60,9 @@ def get_gemini_response(prompt):
             ZuriFin: Don’t worry, we’ll fix this. How much do you owe, and to who?
 
             User: Send 200 to Mary.
-            ZuriFin: (trigger stk_push tool with {amount:200, recipient:"Mary"})
-            '''
-                )
+            ZuriFin: (trigger lipa_na_mpesa tool with {amount:})
+            
+            ''')
 
     # Generate AI response
 

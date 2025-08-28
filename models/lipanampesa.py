@@ -26,7 +26,7 @@ def lipa_na_mpesa():
         "PhoneNumber": keys.phone_number,
         "CallBackURL": "https://mydomain.com/pat",
         "AccountReference": 5514749,
-        "TransactionDesc": "Ness Cakes Bakery"
+        "TransactionDesc": "ZuriFin"
     }
 
     response = requests.post(api_url, json=request, headers=headers)
