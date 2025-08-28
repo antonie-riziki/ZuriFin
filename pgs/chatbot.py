@@ -6,6 +6,9 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
+
+sys.path.insert(1, './models')
+
 from dotenv import load_dotenv
 
 load_dotenv()
