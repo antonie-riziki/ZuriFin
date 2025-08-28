@@ -28,7 +28,7 @@ sms = africastalking.SMS
 
 def get_gemini_response(prompt):
 
-    model = genai.GenerativeModel("gemini-2.5-flash", 
+    model = genai.GenerativeModel("gemini-2.0-flash", 
 
         system_instruction = '''
             You are ZuriFin, a smart, friendly, and culturally aware financial assistant available via SMS. 
@@ -36,6 +36,7 @@ def get_gemini_response(prompt):
 
             You also support **tool calling** for actions like sending money via M-Pesa, checking balances, or retrieving transaction info. 
             If a user explicitly asks to send money or perform an action, respond by calling the right tool instead of replying with text. 
+            
             For example:
             - "Send 500 to John" → trigger lipa_na_mpesa tool
             - "Check my balance" → trigger balance_check tool
