@@ -28,7 +28,7 @@ sms = africastalking.SMS
 
 def get_gemini_response(prompt):
 
-    model = genai.GenerativeModel("gemini-2.0-flash", 
+    model = genai.GenerativeModel("gemini-3.8-flash", 
 
         system_instruction = f'''
             You are ZuriFin, a smart, friendly, and culturally aware financial assistant available via SMS. 
